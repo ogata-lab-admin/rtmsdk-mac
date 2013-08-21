@@ -1,0 +1,21 @@
+prefix=/opt/universal/x86_64
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+rtm_prefix=/opt/universal/x86_64
+rtm_exec_prefix=${prefix}
+rtm_cxx=g++ -arch x86_64
+rtm_cflags= -I/usr/local/include -Wall -fPIC -I/opt/uniersal/x86_64/include -O2 -I${prefix}/include -I${prefix}/include/coil-1.1 -I${prefix}/include/openrtm-1.1 -I${prefix}/include/openrtm-1.1/rtm/idl
+rtm_libs= -L/usr/local/lib --export-dynamic -L/opt/universal/x86_64/lib -L${prefix}/lib  -lomniORB4 -lomnithread -lomniDynamic4 -lRTC -lcoil
+rtm_libdir=@pkglibdir@
+rtm_version=1.1.0
+rtm_orb=omniORB
+rtm_idlc=/usr/local/bin/omniidl
+rtm_idlflags=@IDLFLAGS@
+
+Name: OpenRTM-aist
+Description: An OMG RTC compliant middleware for robots.
+Version: 1.1.0
+Requires: 
+Libs: ${rtm_libs}
+Cflags: ${rtm_cflags}

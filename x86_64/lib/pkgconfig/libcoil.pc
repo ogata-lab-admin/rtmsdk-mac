@@ -1,0 +1,18 @@
+prefix=/opt/universal/x86_64
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib/coil-1.1
+includedir=${prefix}/include/coil-1.1
+coil_prefix=/opt/universal/x86_64
+coil_exec_prefix=${prefix}
+coil_cxx=g++ -arch x86_64
+coil_cflags= -Wall -fPIC -I/opt/uniersal/x86_64/include -O2 -I${prefix}/include/coil-1.1
+coil_libs= -L/opt/universal/x86_64/lib -L${prefix}/lib  -lcoil
+coil_libdir=${exec_prefix}/lib/coil-1.1
+coil_version=1.1.0
+
+Name: coil
+Description: Common Operating-system Infrastructure Layer
+Version: 1.1.0
+Requires:
+Libs: ${coil_libs}
+Cflags: ${coil_cflags}

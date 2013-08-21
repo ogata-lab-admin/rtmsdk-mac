@@ -1,0 +1,11 @@
+prefix=/opt/universal/i386
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: omnithread3
+Description: Threading library for omniORB4
+Version: 4.1.6
+Requires:
+Libs: -L${libdir} -lomnithread
+Cflags: -D__x86__ -D__darwin__ -D__OSVERSION__=1 -I${includedir}
